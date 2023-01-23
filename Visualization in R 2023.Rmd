@@ -28,7 +28,7 @@ library(nummenmaa)
 
 ```
 
-Remember that by defining in the first row of the code chunk **{r, results = FALSE}**, you can stop Markdown from printing the results into your output document when knitting. For short outputs (a couple of rows) this is not an issue.
+By defining **{r, results = FALSE}**  in the first row of the code chunk, you can stop Markdown from printing the results into your output document when knitting. For short outputs (a couple of rows) this is not an issue.
 
 ```{r, results = FALSE}
 
@@ -91,7 +91,7 @@ aggressio %>%
 ```
 
 ```{r, results=FALSE}
-# Last excercise on grouping. Let's use the dataset suhteet (relationships). The variables used are age, appearance, attractiveness, amount of excercise, passion, interest in the same sex, interest in the opposite sex, sexual activity.
+# Last exercise on grouping. Let's use the dataset suhteet (relationships). The variables used are age, appearance, attractiveness, amount of exercise, passion, interest in the same sex, interest in the opposite sex, sexual activity.
 
 suhteet %>%
   group_by(SUKUP) %>%
@@ -104,11 +104,11 @@ suhteet %>%
 
 ## Visualization
 
-Visualizing your data clearly and meaningfully is one of the most important things to learn in R. It is important both in the beginning when you are first inspecting your data and when you are analyzing it and looking at the results. Numbers in statistics are one thing but visualizations can tell us a lot in one glance! 
+Visualizing your data clearly is one of the most important things to learn in R. It is important both in the beginning when you are first inspecting your data and when you are analyzing it and looking at the results. Numbers in statistics are one thing but visualizations can tell us a lot in one glance! 
 
 However, it's important to also remember that visualizations can be misleading if used incorrectly. The world is full of misleading and poorly made visualizations of different statistics, so please pay attention when creating them yourself but also when looking at other people's creations.
 
-As our time is very limited, if you want to go a bit further into the topic of visualization, you can read chapter 8. in the Tilastotieteen käsikirja (p. 147-172). Our exercises are based on the book. There are also useful English materials in the following links: 
+As our time is very limited, if you want to go a bit further into the topic of visualization, you can read chapter 8. in the Tilastotieteen käsikirja (p. 147-172, in Finnish). Our exercises are based on the book. There are also useful English materials in the following links: 
 https://www.r-graph-gallery.com/ggplot2-package.html
 http://r-statistics.co/Top50-Ggplot2-Visualizations-MasterList-R-Code.html
 
@@ -147,9 +147,9 @@ pie(table(insuliini$SOKERITASAP),
 
 ```
 
-The above used bar and pie plots were generated with basic plotting functions from the package named graphics. This is one of the default packages R contains, therefore these functions are always at hand in R.
+The bar and pie plots above were generated with basic plotting functions from the package named graphics. This is one of the default packages R contains, therefore these functions are always at hand in R.
 
-Next we will look into the plotting functions from the tidyverse-package ggplot2. This works a bit differently and it will be more complex from the very simplistic codes used with the basic plotting functions. However, ggplot2 is much more versatile and can create a wide variety of very informative plots that are also beautiful at the same time. This is often wanted for publishing so that's why we also want you to learn the basics of ggplot2.
+Next we will look into the plotting functions from the tidyverse-package ggplot2. This works a bit differently and it will be more complex compared to the very simplistic codes used with the basic plotting functions. However, ggplot2 is much more versatile and can create a wide variety of very informative plots that are also beautiful at the same time. This is often required for publishing, so that's why we also want you to learn the basics of ggplot2.
 
 You can learn more about ggplot2 here https://ggplot2-book.org/index.html. This is a free online book about ggplot2. It's very extensive but look especially into this chapter https://ggplot2-book.org/mastery.html, which helps you to understand the "grammar" of ggplot2. When you handle the grammar, using ggplot2 is easy.
 
