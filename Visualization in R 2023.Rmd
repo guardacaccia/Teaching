@@ -14,7 +14,7 @@ output:
     keep_md: yes
 ---
 
-This document is part of an obligatory R course at the University of Turku (BIOL3050 Bioinformatics to Biologists). The materials have been created by the teacher Dr. Lea Mikkola during 2021-2022.
+This document is part of an obligatory R course at the University of Turku (BIOL3050 Bioinformatics to Biologists). The materials have been created by the teacher Dr. Lea Mikkola during 2021-2022. The teaching materials and data are partly based on the Finnish book "Statistics handbook" By Prof. Lauri Nummenmaa. EAN: 9789520401382.
 
 ### General remarks about piping and grouping  
 
@@ -262,15 +262,15 @@ grid.arrange(plot5, plot6, ncol=2)
 ```
 
 ```{r dev = "png"}
-
 # Finally, let's look at some scatter plots that are very common plots in biosciences.
 
 # On the second row we determine the opacity of the data points with alpha=0.50 and the size of the points in the plot. Try and change these to see how it affects your plot.
 
-plot7 <- qplot(data=suhteet, PARISUHDE, geom="bar", 
-            xlab="Relationship status", ylab="Count", fill=PARISUHDE) + # Set the headings for x and y axes
-  theme_light() + scale_fill_grey() + 
-    theme(axis.text.x=element_text(angle=45, hjust=1))# Use the light theme
+plot7 <- ggplot(insuliini, aes(y=PITUUS, x=PAINO, color=SUKUP)) + 
+  geom_point(alpha=0.50, size=3) + 
+  labs(title="Pituus ja paino", 
+       x="Paino", y = "Pituus") +
+  theme_minimal() + scale_color_grey()
 
 # Now let's do the same as above but let's make the plot a bit more intricate.
 
@@ -294,41 +294,6 @@ plot8<-ggplot(persoonallisuus, aes(y=AHDISTUNEISUUS, x=MASENNUS, color=SUKUP, sh
 grid.arrange(plot7, plot8, ncol=1) 
 #Note that here I used ncol=1 because the plots look a bit better this way.
 ```
-```{r}
-
-plot9 <- ggplot(insuliini, aes(y=PITUUS, x=PAINO, color=SUKUP)) + 
-  geom_point(alpha=0.50, size=3) + 
-  labs(title="Pituus ja paino", 
-       x="Paino", y = "Pituus") +
-  theme_minimal() + scale_color_grey()
-
-# Now let's do the same as above but let's make the plot a bit more intricate.
-
-# The new determinant here shape=SUKUP defines that there will be different shaped data points based on the variable SUKUP.
-
-# On the third row the method=lm means that we use linear model to determine the regression lines seen on the plot.
-
-# On the fourth row we determine the colors of the data points and the regression lines.
-
-# On the fifth row we determine the background color for the regression line.
-
-plot10<-ggplot(insuliini, aes(y=PITUUS, x=PAINO, color=SUKUP, shape=SUKUP)) + 
-  geom_point(alpha=0.50, size=3) +
-  geom_smooth(method=lm, aes(fill=SUKUP)) + 
-  scale_color_manual(values = c("cadetblue", "blueviolet")) + 
-  scale_fill_manual(values = c("grey", "black")) + 
-  labs(title="Pituus ja paino", 
-       x="Paino", y = "Pituus") + 
-  theme_minimal() 
-
-grid.arrange(plot9, plot10, ncol=1) 
-
-
-```
-
-
-## EXTRA
-Go see the little script in Moodle named doge.R. Try to run that in your own R (R.script NOT R Markdown). This is also made to be used with ggplot2.
 
 ## Colors
 
