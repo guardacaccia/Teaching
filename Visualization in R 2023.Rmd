@@ -329,17 +329,6 @@ showCols(bg="gray20",cl=colors()[1:64], rot=30, cex=0.9) #This checks and prints
 
 ## Saving plots
 
-**When using R Markdown**, the plots are saved with adding **keep_md: yes** into the beginning of you R Markdown document. Note that the formatting is very important.
-
-For example:
-
-title: "BIOL3050 lecture 4"
-author: "Lea Mikkola"
-date: "2/9/2022"
-output:
-  word_document:
-    keep_md: yes
-
-This will save all the images you create in your chunks into a new folder in your working directory (the folder is named something like what-ever-you-named-your-markdown_files). You can determine in which format the images are saved by adding **{r dev = "png"}** in to the first row of each of your chunks that include plotting. If you want to use other image types, just put jpg or tiff instead of png within the quotes.
+**When using R Markdown**, the plots are saved with adding **keep_md: yes** into the beginning of you R Markdown document. Note that the formatting (intendation) is very important. This will save all the images you create in your chunks into a new folder in your working directory (the folder is named something like what-ever-you-named-your-markdown_files). You can determine in which format the images are saved by adding **{r dev = "png"}** in to the first row of each of your chunks that include plotting. If you want to use other image types, just put jpg or tiff instead of png within the quotes.
 
 **If you work with R.scripts** and you want to save your plots, use the **Export button in the Plots tab**. There are options to save as an image or as a PDF (or copy to clipboard if you want to attach the image in another document straight away).
