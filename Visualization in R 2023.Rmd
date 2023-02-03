@@ -183,14 +183,14 @@ We will go through examples for both functions.
 # The last line determines the angle for the x-axis labels. angle defines the angle of the text and hjust controls horizontal justification of the text in relation to the plot. Without it the texts will overlap (you can try how it will look).
 
 plot1 <- qplot(data=suhteet, PARISUHDE, geom="bar", 
-            xlab="Sukupuoli", ylab="Lukumäärä", fill=PARISUHDE) + 
+            xlab="Parisuhteet", ylab="Lukumäärä", fill=PARISUHDE) + 
   theme_light() + scale_fill_brewer() + 
   theme(axis.text.x=element_text(angle=45, hjust=1))
 
 # On the second row fill=SUKUP determines that color filling is done by the variable SUKUP (sex).
 
 plot2 <- qplot(data=suhteet, PARISUHDE, geom="bar", 
-            xlab="Sukupuoli", ylab="Lukumäärä", fill=SUKUP) + 
+            xlab="Parisuhteet", ylab="Lukumäärä", fill=SUKUP) + 
   theme_light() + scale_fill_brewer() +
   theme(axis.text.x=element_text(angle=45, hjust=1))  
 
